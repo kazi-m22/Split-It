@@ -5,7 +5,7 @@ img = plt.imread('1.png')
 
 h,w = img.shape
 
-print('w ',w, ' ', 'h ', h)   
+  
 
 x = 0
 y = 0
@@ -19,7 +19,7 @@ else:
     while y<h:    
 
         while x<= w:
-            img_1 = img[y :part_y, x:part_x]
+            img_1 = cnv[y :part_y, x:part_x]
             x = part_x
             part_x = part_x + part_x
             
@@ -29,7 +29,9 @@ else:
         x = 0    
         part_x = w//3
         y = part_y
-        part_y = part_y +part_y
+        y = part_y
+        part_y = part_y +(h//4)
+        
 
     
 plt.show()
