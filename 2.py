@@ -1,15 +1,23 @@
 from matplotlib import pyplot as plt
 import cv2
-img = plt.imread('1.png')
+import numpy as np
+from PIL import Image
 
 
-h,w = img.shape
+fname = '1.png'
+
+img = Image.open(fname).convert("L")
+temp = np.asarray(img)
+i_h, i_w = temp.shape
+temp = temp[0:i_h, 10:i_w]
+h,w = temp.shape
 
   
 
 x = 0
 y = 0
 n=1
+
 if(h<950) | (h<698):
     print('invalid image')
 else:
@@ -19,11 +27,11 @@ else:
     while y<h:    
 
         while x<= w:
-            img_1 = cnv[y :part_y, x:part_x]
+            img_1 = temp[y :part_y, x:part_x]
             x = part_x
             part_x = part_x + part_x
             
-            plt.imshow(img_1)
+            plt.imshow(img_1, cmap = 'gray')
             plt.show()
 
         x = 0    
