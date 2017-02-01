@@ -2,12 +2,13 @@ from matplotlib import pyplot as plt
 import cv2
 import numpy as np
 from PIL import Image
+import os
 
-
-fname = '1.png'
+fname = '1.jpg'
 
 img = Image.open(fname).convert("L")
-temp = np.asarray(img)
+temp = np.array(img)
+
 i_h, i_w = temp.shape
 temp = temp[0:i_h, 10:i_w]
 h,w = temp.shape
@@ -31,9 +32,11 @@ else:
             x = part_x
             part_x = part_x + part_x
             
-            plt.imshow(img_1, cmap = 'gray')
+            plt.imshow(img_1, cmap = 'gist_gray')
             plt.show()
 
+        if part_y - y<h//4:
+            break
         x = 0    
         part_x = w//3
         y = part_y
