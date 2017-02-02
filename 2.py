@@ -24,7 +24,7 @@ else:
     
     while y<h:    
 
-        while x<= w:
+        while x< w:
             if(os.path.exists('photos')):
                 os.chdir(location + '\\photos')
                 img_1 = temp[y :part_y, x:part_x]
@@ -35,8 +35,7 @@ else:
                 plt.show()
                 plt.imsave('img' + str(n), img_1)
                 n = n+1
-                if n==9:
-                    n=5
+                
             else:
                 os.mkdir('photos')
                 continue
