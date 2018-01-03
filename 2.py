@@ -4,10 +4,11 @@ import numpy as np
 from PIL import Image
 import os
 
-temp = plt.imread('1.jpg')
-i_h, i_w, c= temp.shape
+temp = plt.imread('1.png')
+i_h, i_w= temp.shape
 temp = temp[0:i_h, 10:i_w]
-h,w, c= temp.shape
+h,w= temp.shape
+print(temp.shape)
 
 location  = os.getcwd()
   
@@ -26,14 +27,16 @@ else:
 
         while x< w:
             if(os.path.exists('photos')):
-                os.chdir(location + '\\photos')
-                img_1 = temp[y :part_y, x:part_x]
+                os.chdir(location + '/photos')
+                print(part_y)
+                print(type(part_x))
+                img_1 = temp[int(y) :int(part_y), int(x):int(part_x)]
                 x = part_x
                 part_x = part_x + part_x
                 
                 plt.imshow(img_1, cmap = 'gray')
                 plt.show()
-                plt.imsave('img' + str(n), img_1)
+                plt.imsave('img' + str(n), img_1,  cmap = 'gray')
                 n = n+1
                 
             else:
