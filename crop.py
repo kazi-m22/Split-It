@@ -14,13 +14,16 @@ for t in images:
 images = im
 print(images)
 i=0
-# while i<len(images):
-#
-#     img = cv2.imread(images[i])
-#     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-#     ret, img = cv2.threshold(img, 200, 255, cv2.THRESH_BINARY)
-#     cv2.imwrite(images[i], img)
-#     i = i + 1
+
+#thresholding images of a folder
+
+while i<len(images):
+
+    img = cv2.imread(images[i])
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    ret, img = cv2.threshold(img, 200, 255, cv2.THRESH_BINARY)
+    cv2.imwrite(images[i], img)
+    i = i + 1
 
 
 for im in images:
