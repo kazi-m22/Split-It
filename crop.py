@@ -39,11 +39,12 @@ for im in images:
             img_1 = img[int(y):int(part_y), int(x): int(part_x)]
             x = part_x
             part_x = part_x + part_x
-            if os.path.exists('photos'):
-                cv2.imwrite('./photos/%d'%n+'.jpg', img_1)
-            else:
-                os.mkdir('photos')
-                cv2.imwrite('./photos/%d'%n + '.jpg', img_1)
+            if img_1.shape[0] !=0:
+                if os.path.exists('photos'):
+                    cv2.imwrite('./photos/%d'%n+'.jpg', img_1)
+                else:
+                    os.mkdir('photos')
+                    cv2.imwrite('./photos/%d'%n + '.jpg', img_1)
             n += 1
         x = 0
         part_x = w / 3
