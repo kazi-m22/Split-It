@@ -5,4 +5,9 @@ Image cropping for making  dataset for Bangla Number Detection
 ### 1.Clone the directory
 ### 2.Keep scanned images in 'images' folder
 ### input:
-![](Screenshot_8.jpg)
+![](/readme_images/Untitled.jpg)
+
+### output:
+![](/readme_images/Screenshot_8.png)
+
+
