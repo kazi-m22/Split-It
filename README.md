@@ -1,9 +1,7 @@
-# Split-It
-Image cropping for making  dataset for Bangla Number Detection
+# Split-It, automatic data annotation for Bangla Digit Recognition
+Image cropping for making  dataset for Bangla Number Detection. Used 120,000 handwritten pages to generate datagest
 
-## Arrange files as follows:
-### 1.Clone the directory
-### 2.Keep scanned images in 'images' folder
+
 ### input:
 ![](/readme_images/Untitled.jpg)
 
